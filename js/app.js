@@ -10,13 +10,27 @@ function comprar() {
 
     console.log(qtdInferior, qtdSuperior, qtdPista);
     if (ingresso == "superior") {
-        superior.innerHTML = qtdSuperior - qtdIngresso;
+        if (qtdSuperior < qtdIngresso) {
+            alert("Não há ingressos suficientes para a pista superior.");
+        } else {
+            superior.innerHTML = qtdSuperior - qtdIngresso;
+            alert("Ingresso comprado com sucesso!");
+        }
+
 
     } else if (ingresso == "inferior") {
-        inferior.innerHTML = qtdInferior - qtdIngresso;
-
+        if (qtdInferior < qtdIngresso) {
+            alert("Não há ingressos suficientes para a pista inferior.");
+        } else {
+            inferior.innerHTML = qtdInferior - qtdIngresso;
+            alert("Ingresso comprado com sucesso!");
+        }
     } else {
-        pista.innerHTML = qtdPista - qtdIngresso;
-
+        if (qtdPista < qtdIngresso) {
+            alert("Não há ingressos suficientes para a pista.");
+        } else {
+            pista.innerHTML = qtdPista - qtdIngresso;
+            alert("Ingresso comprado com sucesso!");
+        }
     }
 }
